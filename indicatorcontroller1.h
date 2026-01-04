@@ -9,7 +9,7 @@ class IndicatorController : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
-    QML_SINGLETON // exercise 2 singleton macro
+    QML_SINGLETON 
 
     // Q_PROPERTY for indicator states
     Q_PROPERTY(bool parkingBrakeOn READ parkingBrakeOn WRITE setParkingBrakeOn NOTIFY parkingBrakeOnChanged FINAL)
@@ -39,7 +39,7 @@ public:
     void setRightTurnSignalOn(bool on);
     void setFuelWarningOn(bool on);
 
-public slots: // exercise 2
+public slots: 
     void toggleParkingBrake();
     void setTurnSignal(TurnDirection direction);
 
