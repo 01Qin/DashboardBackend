@@ -31,7 +31,7 @@ void IndicatorController::setFuelWarningOn(bool on){
     emit fuelWarningOnChanged();
 }
 
-// exercise 2 slots: toggleParkingBrake
+// slots: toggleParkingBrake
 void IndicatorController::toggleParkingBrake(){
     setParkingBrakeOn(!m_parkingBrakeOn);
 }
