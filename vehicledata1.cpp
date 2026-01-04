@@ -8,7 +8,7 @@ VehicleData::VehicleData(QObject *parent)
 
 }
 
-// exercise 1 setter: speed
+
 void VehicleData::setSpeed(int newSpeed)
 {
     if (m_speed == newSpeed)
@@ -18,7 +18,7 @@ void VehicleData::setSpeed(int newSpeed)
     m_speed = newSpeed;
     emit speedChanged();
 
-    // exercise 4
+    
     emit displaySpeedChanged();
 
     if (oldOverSpeeding != isOverSpeeding()){
@@ -26,7 +26,7 @@ void VehicleData::setSpeed(int newSpeed)
     }
 }
 
-// exercise 1 setter: rpm
+
 void VehicleData::setRpm(int newRpm)
 {
     if (m_rpm == newRpm)
@@ -37,7 +37,7 @@ void VehicleData::setRpm(int newRpm)
     emit rpmChanged();
 }
 
-// exercise 4 computed getter
+
 int VehicleData::displaySpeed() const {
 
     if (m_speedUnit == SpeedUnit::MilePerHour){
@@ -46,7 +46,7 @@ int VehicleData::displaySpeed() const {
     return m_speed;
 }
 
-// Exercise 4 setter: speedUnit
+
 void VehicleData::setSpeedUnit(SpeedUnit unit){
     if (m_speedUnit == unit)
         return;
@@ -69,7 +69,6 @@ void VehicleData::consumeFuel(double amount){
     }
 }
 
-// exercise 4: reset method
 void VehicleData::resetAll(){
     setSpeed(0);
     setRpm(0);
