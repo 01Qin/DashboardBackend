@@ -11,11 +11,11 @@ class VehicleData : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
-    // Exercise 1 properties
+    
     Q_PROPERTY(int speed READ speed WRITE setSpeed NOTIFY speedChanged)
     Q_PROPERTY(int rpm READ rpm WRITE setRpm NOTIFY rpmChanged)
 
-    // Exercise 4 properties
+    
     Q_PROPERTY(double fuelLevel READ fuelLevel NOTIFY fuelLevelChanged FINAL)
     Q_PROPERTY(bool isOverSpeeding READ isOverSpeeding NOTIFY isOverSpeedingChanged FINAL)
     Q_PROPERTY(SpeedUnit speedUnit READ speedUnit WRITE setSpeedUnit NOTIFY speedUnitChanged FINAL)
@@ -45,19 +45,19 @@ public:
     void setSpeed(int newSpeed);
     void setSpeedUnit(SpeedUnit unit);
 
-    Q_INVOKABLE void resetAll(); // exercise 4
+    Q_INVOKABLE void resetAll(); 
 
 public slots:
-    void consumeFuel(double amount); // exercise 4
+    void consumeFuel(double amount); 
 
 
 
 signals:
-    // exercise 1
+    
     void speedChanged();
     void rpmChanged();
 
-    // exercise 4
+    
     void fuelLevelChanged();
     void isOverSpeedingChanged();
     void speedUnitChanged();
