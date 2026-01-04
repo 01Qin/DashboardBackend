@@ -11,7 +11,7 @@ Window {
     title: qsTr("Dashboard")
 
     // ========================================================================
-    // EXERCISE 1: C++ Backend Objects
+    //    C++ Backend Objects
     // ========================================================================
 
     VehicleData {
@@ -19,7 +19,7 @@ Window {
      }
 
     // ========================================================================
-    // EXERCISE 3: VehicleSimulator
+    // VehicleSimulator
     // ========================================================================
 
      VehicleSimulator {
@@ -28,9 +28,9 @@ Window {
      }
 
     // ========================================================================
-    // EXERCISE 5: Trip Computer (OPTIONAL ADVANCED)
+    // Trip Computer 
     // ========================================================================
-    // After implementing TripComputer class, uncomment these lines:
+    
 
     //TripComputer {
      //   id: tripComputer
@@ -52,11 +52,9 @@ Window {
             anchors.left: background.left
             anchors.top: background.top
 
-            // EXERCISE 1: After implementing VehicleData, replace this line:
              speed: vehicleData.speed
 
-            // TEMPORARY: QML-only simulation (Remove in EXERCISE 3)
-            // (EXERCISE 1: change speedGauge to vehicleData inside the timer)
+        
 
         }
 
@@ -64,7 +62,6 @@ Window {
             anchors.right: background.right
             anchors.top: background.top
 
-            // EXERCISE 1: After implementing VehicleData, use:
             rpm: vehicleData.rpm
         }
 
@@ -72,17 +69,16 @@ Window {
             id: indicatorPane
             anchors.centerIn: background
 
-            // EXERCISE 2: After implementing IndicatorController singleton, use:
              parkingBrakeOn: IndicatorController.parkingBrakeOn
              leftTurnSignalOn: IndicatorController.leftTurnSignalOn
              rightTurnSignalOn: IndicatorController.rightTurnSignalOn
-             fuelWarningOn: vehicleData.fuelLevel < 10 // EXERCISE 4: Computed binding ()
+             fuelWarningOn: vehicleData.fuelLevel < 10 // Computed binding ()
         }
 
         // ====================================================================
-        // EXERCISE 4: Speed Warning Component
+        // Speed Warning Component
         // ====================================================================
-        // After implementing isOverSpeeding property, uncomment:
+        
 
          SpeedWarning {
              anchors.horizontalCenter: background.horizontalCenter
@@ -92,9 +88,8 @@ Window {
         }
 
         // ====================================================================
-        // EXERCISE 4: Fuel Level Display
+        // Fuel Level Display
         // ====================================================================
-        // After implementing fuelLevel property, uncomment:
 
          FuelDisplay {
              anchors.left: background.left
@@ -104,9 +99,8 @@ Window {
          }
 
         // ====================================================================
-        // EXERCISE 4: Speed Display with Unit
+        // Speed Display with Unit
         // ====================================================================
-        // After implementing displaySpeed and speedUnit, uncomment:
 
          SpeedDisplay {
              anchors.right: background.right
@@ -117,9 +111,8 @@ Window {
      }
 
         // ====================================================================
-        // EXERCISE 5: Trip Computer Display (OPTIONAL ADVANCED)
+        // Trip Computer Display 
         // ====================================================================
-        // After implementing TripComputer class, uncomment these lines:
 
         // TripDisplay {
         //     anchors.horizontalCenter: background.horizontalCenter
@@ -139,14 +132,13 @@ Window {
         spacing: 10
 
         // ====================================================================
-        // EXERCISE 5: Trip Computer Control Buttons (OPTIONAL ADVANCED)
+        // Trip Computer Control Buttons
         // ====================================================================
-        // After implementing TripComputer class, change visible to true:
 
         Row {
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: 10
-            visible: false  // Change to true after implementing Exercise 5
+            visible: false 
 
             // Button {
             //     width: 150
@@ -173,7 +165,7 @@ Window {
         }
 
         // ====================================================================
-        // EXERCISES 1-4: Vehicle Control Buttons
+        // Vehicle Control Buttons
         // ====================================================================
 
         Row {
@@ -185,7 +177,6 @@ Window {
             height: 50
             text: IndicatorController.leftTurnSignalOn ? "Turn Left Off" : "Turn Left On"
             onClicked: {
-                // EXERCISE 2: After implementing IndicatorController, use:
                  IndicatorController.setTurnSignal(IndicatorController.Left)
             }
         }
@@ -195,7 +186,6 @@ Window {
             height: 50
             text: IndicatorController.rightTurnSignalOn ? "Turn Right Off" : "Turn Right On"
             onClicked: {
-                // EXERCISE 2: After implementing IndicatorController, use:
                  IndicatorController.setTurnSignal(IndicatorController.Right)
             }
         }
@@ -203,9 +193,8 @@ Window {
         Button {
             width: 150
             height: 50
-            text: indicatorPane.parkingBrakeOn ? "Parking Brake On" : "Parking Brake Off" // EXERCISE 2: indicatorPane -> IndicatorController
+            text: indicatorPane.parkingBrakeOn ? "Parking Brake On" : "Parking Brake Off"
             onClicked: {
-                // EXERCISE 2: After implementing IndicatorController, use:
                  IndicatorController.toggleParkingBrake()
             }
         }
@@ -213,11 +202,10 @@ Window {
         Button {
             width: 150
             height: 50
-            // EXERCISE 3: After implementing VehicleSimulator, change to:
             text: simulator.engineRunning ? "Stop Engine" : "Start Engine"
 
             onClicked: {
-                // EXERCISE 3: After implementing VehicleSimulator, use:
+
                  if (simulator.engineRunning) {
                      simulator.stopEngine()
                  } else {
@@ -231,9 +219,8 @@ Window {
         }
 
         // ====================================================================
-        // EXERCISE 4: Speed Unit Toggle Button
+        // Speed Unit Toggle Button
         // ====================================================================
-        // After implementing speedUnit property, uncomment:
 
          Button {
             width: 150
@@ -247,9 +234,8 @@ Window {
          }
 
         // ====================================================================
-        // EXERCISE 4: Reset Button
+        // Reset Button
         // ====================================================================
-        // After implementing resetAll() method, uncomment:
 
         Button {
             width: 150
@@ -262,3 +248,4 @@ Window {
         }  // End of vehicle control Row
     }  // End of Column
 }
+
