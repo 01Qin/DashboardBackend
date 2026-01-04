@@ -2,7 +2,7 @@
 #include <QRandomGenerator>
 
 
-// exercise 3: timer setup
+
 VehicleSimulator::VehicleSimulator(QObject *parent)
     : QObject(parent)
     , m_updateTimer(new QTimer(this))
@@ -29,7 +29,7 @@ void VehicleSimulator::startEngine(){
     emit engineRunningChanged();
 }
 
-// exercise 3: stop engine
+
 void VehicleSimulator::stopEngine() {
     if (!m_engineRunning) return;
     m_engineRunning = false;
@@ -43,7 +43,7 @@ void VehicleSimulator::stopEngine() {
 }
 
 
-// ecercise 3 & 4: simulation logic
+
 void VehicleSimulator::updateVehicle(){
     if (!m_vehicleData) return;
 
@@ -69,7 +69,7 @@ void VehicleSimulator::updateVehicle(){
     m_vehicleData->setSpeed(currentSpeed);
     m_vehicleData->setRpm(currentRpm);
 
-    // exercise 4: consume fuel
+    
     if (currentSpeed > 0){
         double fuelRate = (currentRpm / 8000.0) * 0.01;
         m_vehicleData->consumeFuel(fuelRate);
